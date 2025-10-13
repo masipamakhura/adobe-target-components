@@ -7,10 +7,11 @@
 })(this, function (exports) {
   "use strict";
 
+  // src/components/button/button.js
   const DEFAULTS = {
     text: "Click",
     className: "",
-    attrs: {},
+    attrs: {}, // additional attributes
     onClick: null,
   };
 
@@ -25,17 +26,23 @@
       btn.type = "button";
       btn.className = ["atc-button", this.opts.className].filter(Boolean).join(" ");
       btn.textContent = this.opts.text;
+
+      // attach attrs
       Object.keys(this.opts.attrs || {}).forEach((k) => {
         btn.setAttribute(k, this.opts.attrs[k]);
       });
+
+      // attach click
       if (typeof this.opts.onClick === "function") {
         btn.addEventListener("click", (evt) => this.opts.onClick(evt, this));
       }
+
       this.el = btn;
       return btn;
     }
 
     mount(target) {
+      // target can be selector or element
       let node = typeof target === "string" ? document.querySelector(target) : target;
       if (!node) throw new Error("Target not found to mount button");
       node.appendChild(this.render());
@@ -52,8 +59,20 @@
     }
   }
 
-  // Export directly
-  exports.Button = Button;
+  // src/index.js
+
+  /**
+   * Library registry
+   * Exposes window.ATComponents when bundled for UMD
+   */
+  const ATComponents = {
+    Button: Button,
+  };
+
+  // also attach a helper to register a new component at runtime
+
+  exports.atc = ATComponents;
 
   Object.defineProperty(exports, "__esModule", { value: true });
 });
+//# sourceMappingURL=components.js.map

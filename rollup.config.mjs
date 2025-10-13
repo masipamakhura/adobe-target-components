@@ -10,13 +10,13 @@ export default {
     {
       file: "dist/components.js",
       format: "umd",
-      name: "ATComponents", // global name
+      name: "ATC", // global name
       sourcemap: true,
     },
     {
       file: "dist/components.min.js",
       format: "umd",
-      name: "ATComponents",
+      name: "ATC",
       plugins: [terser()],
       sourcemap: false,
     },

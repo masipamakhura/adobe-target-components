@@ -71,7 +71,7 @@
 
   // also attach a helper to register a new component at runtime
 
-  exports.atc = ATComponents;
+  exports.atc = ATComponents.Button;
 
   Object.defineProperty(exports, "__esModule", { value: true });
 });

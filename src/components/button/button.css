@@ -1,0 +1,25 @@
+.atc-button {
+  display: inline-block;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(#fff, #f6f6f6);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  user-select: none;
+}
+.atc-button--primary {
+  background: linear-gradient(#007bff, #0069d9);
+  color: white;
+  border-color: rgba(0, 0, 0, 0.06);
+}
+.atc-button:focus {
+  outline: 2px solid rgba(0, 123, 255, 0.25);
+}

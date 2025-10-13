@@ -1,0 +1,11 @@
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Example folder (probably for testing)
+exmpler/
+
+# Server file (if you don't want to push it)
+server.js

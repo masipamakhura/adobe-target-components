@@ -1,8 +1,11 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.ATComponents = {}));
-})(this, (function (exports) { 'use strict';
+  typeof exports === "object" && typeof module !== "undefined"
+    ? factory(exports)
+    : typeof define === "function" && define.amd
+    ? define(["exports"], factory)
+    : ((global = typeof globalThis !== "undefined" ? globalThis : global || self), factory((global.ATComponents = {})));
+})(this, function (exports) {
+  "use strict";
 
   // src/components/button/button.js
   const DEFAULTS = {
@@ -73,9 +76,7 @@
   };
 
   exports.ATComponents = ATComponents;
-  exports.default = ATComponents;
 
-  Object.defineProperty(exports, '__esModule', { value: true });
-
-}));
+  Object.defineProperty(exports, "__esModule", { value: true });
+});
 //# sourceMappingURL=components.js.map

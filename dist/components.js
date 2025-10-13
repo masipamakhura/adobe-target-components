@@ -70,10 +70,13 @@
   };
 
   // also attach a helper to register a new component at runtime
-
-  exports.atc = {
-    Button: Button,
+  ATComponents.register = function (name, comp) {
+    if (!name || !comp) throw new Error("register(name, component)");
+    this[name] = comp;
   };
+
+  exports.ATComponents = ATComponents;
+  exports.default = ATComponents;
 
   Object.defineProperty(exports, "__esModule", { value: true });
 });

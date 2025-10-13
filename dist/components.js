@@ -62,18 +62,20 @@
    * Library registry
    * Exposes window.ATComponents when bundled for UMD
    */
-  const ATComponents = {
+  const ATComp = {
     Button: Button,
   };
 
   // also attach a helper to register a new component at runtime
-  ATComponents.register = function (name, comp) {
+  ATComp.register = function (name, comp) {
     if (!name || !comp) throw new Error("register(name, component)");
     this[name] = comp;
   };
 
-  exports.ATComponents = ATComponents;
-  exports.default = ATComponents;
+  var index = ATComp.Button;
+
+  exports.ATComp = ATComp;
+  exports.default = index;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

@@ -10,11 +10,12 @@ const ATComponents = {
 };
 
 // also attach a helper to register a new component at runtime
-// ATComponents.register = function (name, comp) {
-//   if (!name || !comp) throw new Error("register(name, component)");
-//   this[name] = comp;
-// };
+ATComponents.register = function (name, comp) {
+  if (!name || !comp) throw new Error("register(name, component)");
+  this[name] = comp;
+};
 
-export default ATComponents;
+export default { ...ATComponents };
 
 // also allow named export
+export { ATComponents };

@@ -14,7 +14,7 @@ ATComponents.register = function (name, comp) {
   if (!name || !comp) throw new Error("register(name, component)");
   this[name] = comp;
 };
-
+window.AdobeComponents = ATComponents;
 export default ATComponents;
 
 // also allow named export

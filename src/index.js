@@ -18,4 +18,3 @@ ATComponents.register = function (name, comp) {
 export default ATComponents;
 
 // also allow named export
-export { ATComponents };

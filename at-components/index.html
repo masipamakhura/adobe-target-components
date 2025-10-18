@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Component Library Preview</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./components/button.css" />
+    <link rel="stylesheet" href="./components/popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>JS Component Library</h1>
+    </header>
+    <main id="component-list"></main>
+
+    <script type="module">
+      console.log("Module script is running");
+      //import { createButton } from "./components/button/button.js";
+      import { createButton } from "/components/button.js";
+      import { Popup } from "./components/popup.js";
+
+      const list = document.getElementById("component-list");
+      const section = document.createElement("section");
+      section.innerHTML = "<h2>Button Component</h2>";
+
+      const button = createButton({ label: "Demo Button" });
+      const ot_4356 = new Popup({
+        ticketNumber: "3252",
+        impressionID: "${campaign.recipe.name}",
+        timeout: 8000,
+        triggerOnScroll: false,
+        imgLeftLayout: true,
+        allowClickOutsideToClose: true,
+        content: {
+          label: "Get a FREE Cleaning Kit with a Ford service!",
+          bgImage: "/content/dam/.../summer-hero.jpg",
+          heading: "Summer starts with a ready Ford.",
+          body: `Book your service now and receive a <b>FREE cleaning kit!</b>
+           <a data-id="0" class="disclaimers-btn"><sup>*</sup></a>`,
+          primaryCtaText: "Book Now",
+          primaryCtaLink: "/support/book-a-service?vc=SUMMERCLEAN",
+          secondaryCtaText: "No, thanks",
+          secondaryCtaLink: "",
+          disclaimers: ["<p>[*] Offer valid for online bookings made before 15/08/2025.</p>"],
+        },
+      });
+
+      ot_4356.init();
+
+      section.appendChild(button);
+
+      list.appendChild(section);
+    </script>
+    <script>
+      console.log("page running ");
+    </script>
+  </body>
+
+  <!--
+  // Expose globally for Adobe Target usage
+//module.exports = global.Popup = Popup;
+
+/* const summerPopup = new Popup({
+  ticketNumber: "3252",
+  impressionID: "${campaign.recipe.name}",
+  timeout: 8000,
+  triggerOnScroll: false,
+  imgLeftLayout: true,
+  allowClickOutsideToClose: true,
+  content: {
+    label: "Get a FREE Cleaning Kit with a Ford service!",
+    bgImage: "/content/dam/.../summer-hero.jpg",
+    heading: "Summer starts with a ready Ford.",
+    body: `Book your service now and receive a <b>FREE cleaning kit!</b>
+           <a data-id="0" class="disclaimers-btn"><sup>*</sup></a>`,
+    primaryCtaText: "Book Now",
+    primaryCtaLink: "/support/book-a-service?vc=SUMMERCLEAN",
+    secondaryCtaText: "No, thanks",
+    secondaryCtaLink: "",
+    disclaimers: [
+      "<p>[*] Offer valid for online bookings made before 15/08/2025.</p>",
+    ],
+  },
+});
+
+summerPopup.init();
+*/
+  
+  -->
+</html>
